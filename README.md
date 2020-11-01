@@ -4,7 +4,7 @@
 #### 1. Use Key bindings to schedule and share event details
 #### 2. Multiple user login and scheduling the meetings
 
-#### This repo contains only the web version. Although I will give a walk through the process of developing a extension
+## This repo contains only the web version. Although I will give a walk through the process of developing a extension
 
 ## Steps
 
