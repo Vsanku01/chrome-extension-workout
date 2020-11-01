@@ -6,6 +6,8 @@
 
 #### This repo contains only the web version. Although I will give a walk through the process of developing a extension
 
+## Steps
+
 #### Step: 1 - We should use Google Calendar API to schedule and arrange the meetings cause there is not api available from google meet to create meetings.
 
 #### Step: 2 - Go to [console.developers.google](https://console.developers.google.com/) and create new Project and add Google Calendar API to the **API & Services** section.
@@ -67,7 +69,7 @@
 
 #### Step 8: Add Event Listeners in the ```background.js``` to listen for the events from frontend
 
-#### I'm attaching reference docs from this step [](https://developer.chrome.com/apps/commands)
+#### I'm attaching reference docs from this step [https://developer.chrome.com/apps/commands](https://developer.chrome.com/apps/commands)
 
 ```
  chrome.commands.onCommand.addListener(function(command) {
