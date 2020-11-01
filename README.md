@@ -21,7 +21,7 @@
 
 #### **Step: 6** - Include them in the ```manifest.json``` and the respective scopes and permissions.
 
-```
+``` js
   "key": "YOUR_KEY",
   "oauth2": {
     "client_id": "YOUR_CLIENT_ID",
@@ -43,7 +43,7 @@
 
 
 #### **Step 7:** Create Key bindings in ```manifest.json```
-```
+```js
   "commands": {
     "create-meeting": {
       "suggested_key": {
@@ -71,7 +71,7 @@
 
 #### I'm attaching reference docs from this step [https://developer.chrome.com/apps/commands](https://developer.chrome.com/apps/commands)
 
-```
+```js
  chrome.commands.onCommand.addListener(function(command) {
         console.log('Command:', command);
         if(command === 'YOUR_COMMAND'){
@@ -85,7 +85,7 @@
 
 
 #### **Step 9:** You can use the following snippet to create a meeting, reference [https://developers.google.com/calendar/v3/reference/events](https://developers.google.com/calendar/v3/reference/events)
-```
+```js
 gapi.client.calendar.events.insert({
   "calendarId": "primary",
   "conferenceDataVersion": 1,
