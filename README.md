@@ -116,7 +116,7 @@ gapi.client.calendar.events.insert({
 
 
 
-#### 👉 This is just a workout which i did when i am developing. You can send a PR to correct, if i'm wrong 😄
+#### 👉 This is just a workout which i did when i was developing. You can send a PR to correct, if i'm wrong 😄
 
 
 
