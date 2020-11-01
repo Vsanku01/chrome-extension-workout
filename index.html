@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Google Calendar API Quickstart</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="alert('Please authorize yourself to schedule Meetings')">
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script>
+      // Getting the attendees Email
+      let attendeesEmail = ''
+      function updateAttendeesEmail(e) {
+        attendeesEmail = e.target.value
+      }
+
+      function authenticate() {
+        return gapi.auth2
+          .getAuthInstance()
+          .signIn({
+            scope:
+              'https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar.events',
+          })
+          .then(
+            function () {
+              console.log('Sign-in successful')
+            },
+            function (err) {
+              console.error('Error signing in', err)
+            }
+          )
+      }
+      function loadClient() {
+        gapi.client.setApiKey('YOUR_API_KEY')
+        return gapi.client
+          .load(
+            'https://content.googleapis.com/discovery/v1/apis/calendar/v3/rest'
+          )
+          .then(
+            function () {
+              console.log('GAPI client loaded for API')
+            },
+            function (err) {
+              console.error('Error loading GAPI client for API', err)
+            }
+          )
+      }
+      // Make sure the client is loaded and sign-in is complete before calling this method.
+      function execute() {
+        return gapi.client.calendar.events
+          .insert({
+            calendarId: 'primary',
+            conferenceDataVersion: 1,
+            maxAttendees: 2,
+            sendNotifications: true,
+            sendUpdates: 'all',
+            supportsAttachments: true,
+            resource: {
+              end: {
+                date: '2020-10-26',
+              },
+              start: {
+                date: '2020-10-26',
+              },
+              attendees: [
+                {
+                  email: `${attendeesEmail}`,
+                  comment: 'Try to attend the meeting as scheduled',
+                },
+              ],
+              conferenceData: {
+                createRequest: {
+                  conferenceSolutionKey: {
+                    type: 'hangoutsMeet',
+                  },
+                  requestId: 'wdewdEcxx9asdX',
+                },
+              },
+              summary: 'titles are cool',
+            },
+          })
+          .then(
+            function (response) {
+              // Handle the results here (response.result has the parsed body).
+              console.log('Response', response)
+              console.log('Meeting Link', response.result.hangoutLink)
+            },
+            function (err) {
+              console.error('Execute error', err)
+            }
+          )
+      }
+      gapi.load('client:auth2', function () {
+        gapi.auth2.init({
+          client_id:
+            '690250011741-le435l4bas78ldv8pu13061s3d98d9i5.apps.googleusercontent.com',
+        })
+      })
+    </script>
+    <div class="schedule">
+      <label for="attendees">Enter Attendees Email Address</label>
+      <input
+        type="text"
+        id="attendees-email"
+        onchange="updateAttendeesEmail()"
+      />
+      <button onclick="authenticate().then(loadClient)">
+        authorize and load
+      </button>
+      <button onclick="execute()">Schedule Meeting</button>
+    </div>
+  </body>
+</html>
