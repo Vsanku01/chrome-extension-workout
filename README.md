@@ -74,6 +74,11 @@
 ```
  chrome.commands.onCommand.addListener(function(command) {
         console.log('Command:', command);
+        if(command === 'YOUR_COMMAND'){
+          chrome.runtime.sendMessage({
+            msg: 'Triggered the Command, You can listen to this message in your popup.js and trigger the associated event'
+          })
+        }
       });
 
 ```
