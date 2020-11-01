@@ -8,18 +8,18 @@
 
 ## Steps
 
-#### **Step**: 1- We should use Google Calendar API to schedule and arrange the meetings cause there is not api available from google meet to create meetings.
+#### ```Step: 1``` - We should use Google Calendar API to schedule and arrange the meetings cause there is not api available from google meet to create meetings.
 
-#### **Step**: 2 - Go to [console.developers.google](https://console.developers.google.com/) and create new Project and add Google Calendar API to the **API & Services** section.
+#### ```Step: 2``` - Go to [console.developers.google](https://console.developers.google.com/) and create new Project and add Google Calendar API to the **API & Services** section.
 
-#### **Step: 3** - Generate a key and copy the clientID and Key for further reference
+#### ```Step: 3```- Generate a key and copy the clientID and Key for further reference
 
-#### **Step: 4 **- Now move to the project folder and create ```manifest.json``` and ```background.html``` and ```background.js```
+#### ```Step: 4``` - Now move to the project folder and create ```manifest.json``` and ```background.html``` and ```background.js```
 
 
-#### **Step: 5** - Go to the chrome developer Dashbord and register your extension there by uploading the zip of your project folder and generate ```key```. Just a small information this is not the same as the key which you generated in the api console.
+#### ```Step: 5``` - Go to the chrome developer Dashbord and register your extension there by uploading the zip of your project folder and generate ```key```. Just a small information this is not the same as the key which you generated in the api console.
 
-#### **Step: 6** - Include them in the ```manifest.json``` and the respective scopes and permissions.
+#### ```Step: 6``` - Include them in the ```manifest.json``` and the respective scopes and permissions.
 
 ``` json
   "key": "YOUR_KEY",
@@ -42,7 +42,7 @@
 ```
 
 
-#### **Step 7:** Create Key bindings in ```manifest.json```
+#### ```Step: 7``` - Create Key bindings in ```manifest.json```
 ```js
   "commands": {
     "create-meeting": {
@@ -67,7 +67,7 @@
 ```
 
 
-#### **Step 8:** Add Event Listeners in the ```background.js``` to listen for the events from frontend
+#### ```Step: 8``` -  Add Event Listeners in the ```background.js``` to listen for the events from frontend
 
 #### I'm attaching reference docs from this step [https://developer.chrome.com/apps/commands](https://developer.chrome.com/apps/commands)
 
@@ -84,7 +84,7 @@
 ```
 
 
-#### **Step 9:** You can use the following snippet to create a meeting, reference [https://developers.google.com/calendar/v3/reference/events](https://developers.google.com/calendar/v3/reference/events)
+#### ```Step: 9``` You can use the following snippet to create a meeting, reference [https://developers.google.com/calendar/v3/reference/events](https://developers.google.com/calendar/v3/reference/events)
 ```js
 gapi.client.calendar.events.insert({
   "calendarId": "primary",
@@ -111,8 +111,8 @@ gapi.client.calendar.events.insert({
 ```
 
 
-#### **Step: 10** - You can send a ``` POST ``` request to the Google calenders api ```  https://www.googleapis.com/calendar/v3/calendars/primary/events?conferenceDataVersion=1  ``` along with the events details for creating a event, further you can store the response in the chrome storage for sharing and copy functionality. Refer to [https://developers.google.com/calendar/v3/reference](https://developers.google.com/calendar/v3/reference) for possible API end points
-#### **Step: 11** - Lastly, you can use the meeting link and share. You can add a command to share via social networking apps and share links.
+#### ```Step: 10``` - You can send a ``` POST ``` request to the Google calenders api ```  https://www.googleapis.com/calendar/v3/calendars/primary/events?conferenceDataVersion=1  ``` along with the events details for creating a event, further you can store the response in the chrome storage for sharing and copy functionality. Refer to [https://developers.google.com/calendar/v3/reference](https://developers.google.com/calendar/v3/reference) for possible API end points
+#### ```Step: 11``` - Lastly, you can use the meeting link and share. You can add a command to share via social networking apps and share links.
 
 
 
