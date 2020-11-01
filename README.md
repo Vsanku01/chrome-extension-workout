@@ -21,7 +21,7 @@
 
 #### **Step: 6** - Include them in the ```manifest.json``` and the respective scopes and permissions.
 
-``` js
+``` json
   "key": "YOUR_KEY",
   "oauth2": {
     "client_id": "YOUR_CLIENT_ID",
