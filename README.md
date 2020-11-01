@@ -8,9 +8,9 @@
 
 ## Steps
 
-#### **Step: 1 **- We should use Google Calendar API to schedule and arrange the meetings cause there is not api available from google meet to create meetings.
+#### **Step**: 1- We should use Google Calendar API to schedule and arrange the meetings cause there is not api available from google meet to create meetings.
 
-#### **Step: 2** - Go to [console.developers.google](https://console.developers.google.com/) and create new Project and add Google Calendar API to the **API & Services** section.
+#### **Step**: 2 - Go to [console.developers.google](https://console.developers.google.com/) and create new Project and add Google Calendar API to the **API & Services** section.
 
 #### **Step: 3** - Generate a key and copy the clientID and Key for further reference
 
