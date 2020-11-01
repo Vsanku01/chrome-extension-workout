@@ -1,4 +1,5 @@
 ## Aim: To automate Google Meet using Chrome extension
 
 ## Required:
-# 1. Everything should operate
+#### 1. Use Key bindings to schedule and share event details
+
