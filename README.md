@@ -84,4 +84,37 @@
 ```
 
 
+#### Step 9: You can use the following snippet to create a meeting, reference [https://developers.google.com/calendar/v3/reference/events](https://developers.google.com/calendar/v3/reference/events)
+```
+gapi.client.calendar.events.insert({
+  "calendarId": "primary",
+  "conferenceDataVersion": 1,
+  "resource": {
+    "end": {
+      "date": "2020-10-24"
+    },
+    "start": {
+      "date": "2020-10-23"
+    },
+    "conferenceData": {
+      "createRequest": {
+        "conferenceSolutionKey": {
+          "type": "hangoutsMeet"
+        },
+        "requestId": "some-random-string"
+      }
+    },
+    "summary": "titles are cool"
+  }
+});
+
+```
+
+
+#### Step: 10 - You can send a ```POST``` request to the Google calenders api ```https://www.googleapis.com/calendar/v3/calendars/primary/events?conferenceDataVersion=1``` along with the events details for creating a event, further you can store the response in the chrome storage for sharing and copy functionality.
+
+
+#### Step: 11 - Lastly, you can use the meeting link and share. You can add a command to share via social networking apps and share links. :)
+
+
 
