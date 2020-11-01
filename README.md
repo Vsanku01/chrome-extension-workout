@@ -111,10 +111,11 @@ gapi.client.calendar.events.insert({
 ```
 
 
-#### Step: 10 - You can send a ```POST``` request to the Google calenders api ```https://www.googleapis.com/calendar/v3/calendars/primary/events?conferenceDataVersion=1``` along with the events details for creating a event, further you can store the response in the chrome storage for sharing and copy functionality.
+#### Step: 10 - You can send a ``` POST ``` request to the Google calenders api ```  https://www.googleapis.com/calendar/v3/calendars/primary/events?conferenceDataVersion=1  ``` along with the events details for creating a event, further you can store the response in the chrome storage for sharing and copy functionality.
 
 
-#### Step: 11 - Lastly, you can use the meeting link and share. You can add a command to share via social networking apps and share links. :)
+#### Step: 11 - Lastly, you can use the meeting link and share. You can add a command to share via social networking apps and share links.
+
 
 
 
